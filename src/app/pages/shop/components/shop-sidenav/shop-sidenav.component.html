@@ -1,0 +1,16 @@
+<div class="shop-sidenav__container">
+    <p class="shop-sidenav__filter-text">Filters:</p>
+
+    <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="250"
+        step="250"
+        min="0"
+        max="10000"
+        aria-label="units"
+        (input)="updatePrice($event.value)"
+    ></mat-slider>
+
+    <p class="shop-sidenav__filter-text">Price: {{ currentPrice }}</p>
+</div>

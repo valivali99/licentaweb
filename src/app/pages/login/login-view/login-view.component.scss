@@ -1,0 +1,41 @@
+.login__right-side-page-container {
+    background-image: url('../../../../assets/pianowallpaper.jpg');
+    background-size: cover;
+    width: 50%;
+    height: calc(100% - 55px);
+    float: right;
+}
+
+.login__left-side-page-container {
+    text-align: center;
+    width: 50%;
+    height: calc(100% - 55px);
+    float: left;
+}
+
+.login__credentials-area {
+    margin-top: 100px;
+}
+
+.login__header {
+    font-size: 80px;
+}
+
+.login__form-field {
+    width: 300px;
+}
+
+.login__button {
+    width: 300px;
+}
+
+.btn-dark:hover {
+    background-color: rgb(104, 104, 104);
+    color: white;
+}
+
+::ng-deep .mat-form-field {
+    font-family: 'Gwendolyn';
+    font-size: 20px;
+    color: black;
+}

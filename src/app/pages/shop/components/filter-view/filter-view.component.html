@@ -1,0 +1,22 @@
+<div class="shop-sidenav__container">
+    <p class="shop-sidenav__filter-title">Filters:</p>
+
+    <p class="shop-sidenav__filter-text">Starting Price: {{ currentPrice }}</p>
+
+    <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="250"
+        step="250"
+        min="0"
+        max="10000"
+        aria-label="units"
+        (input)="updatePrice($event.value)"
+    ></mat-slider>
+
+    <div class="shop-sidenav__filter-list-container">
+        <ng-container *ngFor="let item of itemTypes">
+            <mat-checkbox>{{ item }}</mat-checkbox>
+        </ng-container>
+    </div>
+</div>

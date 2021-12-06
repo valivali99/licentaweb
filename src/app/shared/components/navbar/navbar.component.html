@@ -1,0 +1,15 @@
+<div class="navbar__container">
+    <div class="navbar__text-container">
+        <img class="navbar__logo" src="../../../../assets/logo.png" />
+
+        <p (click)="playSound('c')" [routerLink]="homeRoute">Home</p>
+
+        <p (click)="playSound('d')" [routerLink]="shopRoute">Shop</p>
+
+        <p (click)="playSound('e')" [routerLink]="newsletterRoute">Newsletter</p>
+
+        <p>Info</p>
+
+        <p class="navbar__log-in-text" [routerLink]="loginRoute">Log In</p>
+    </div>
+</div>
