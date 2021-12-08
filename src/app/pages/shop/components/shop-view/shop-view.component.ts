@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
+import { Item } from 'src/app/shared/models/itemModel';
+import { ItemService } from 'src/app/shared/services/item-service/item.service';
 import { FilterViewComponent } from '../filter-view/filter-view.component';
 
 @Component({
@@ -8,11 +10,21 @@ import { FilterViewComponent } from '../filter-view/filter-view.component';
     styleUrls: ['./shop-view.component.scss']
 })
 export class ShopViewComponent implements OnInit {
-    constructor(private _bottomSheet: MatBottomSheet) {}
+    items!: Item[];
 
-    openBottomSheet(): void {
-        this._bottomSheet.open(FilterViewComponent);
+    constructor(private bottomSheet: MatBottomSheet, private itemService: ItemService) {}
+
+    ngOnInit(): void {
+        this.getItems();
     }
 
-    ngOnInit(): void {}
+    getItems(): void {
+        this.itemService.getItems().subscribe((response: Item[]) => {
+            this.items = response;
+        });
+    }
+
+    openBottomSheet(): void {
+        this.bottomSheet.open(FilterViewComponent);
+    }
 }

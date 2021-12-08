@@ -4,12 +4,18 @@
             <mat-icon>shopping_cart</mat-icon>
         </div>
 
-        <img class="item-card__image" src="../../../../assets/mock.jpg" />
+        <img class="item-card__image" [src]="path" />
 
         <div class="item-card__info-area">
-            <p class="item-card__text">Name: Nume</p>
+            <p class="item-card__text">{{ item.name }}</p>
 
-            <p class="item-card__text">Pret: 100$</p>
+            <p class="item-card__text">Price: {{ item.price }}</p>
+
+            <p class="item-card__text" *ngIf="item.isStock; else notAvailable">Available</p>
+
+            <ng-template #notAvailable>
+                <p class="item-card__text">Not Available</p>
+            </ng-template>
         </div>
     </div>
 </div>

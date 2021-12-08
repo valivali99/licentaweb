@@ -3,9 +3,11 @@
 <div class="newsletter__text-container">
     <p class="newsleter__title">Musify's Newsletter</p>
 
-    <label for="email" class="newsletter__login-input-label">Enter your email:</label>
+    <form [formGroup]="mailForm">
+        <label for="email" class="newsletter__login-input-label">Enter your email:</label>
 
-    <input type="text" name="email" class="newsletter__login-input" id="email" />
+        <input formControlName="email" type="text" name="email" class="newsletter__login-input" #email />
+    </form>
 
-    <button type="button" class="btn btn-dark newsletter__subscribe-button">Subscribe</button>
+    <button type="button" class="btn btn-dark newsletter__subscribe-button" (click)="sendMail()">Subscribe</button>
 </div>

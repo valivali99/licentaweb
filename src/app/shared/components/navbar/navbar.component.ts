@@ -17,7 +17,7 @@ export class NavbarComponent implements OnInit {
 
     playSound(note: string) {
         let audio = new Audio();
-        audio.src = '../../../assets/sounds/' + note + '.m4a';
+        //audio.src = '../../../assets/sounds/' + note + '.m4a';
         audio.load();
         audio.play();
     }

@@ -1,19 +1,7 @@
 <button mat-raised-button (click)="openBottomSheet()" class="shop-view__filters-button">Filters</button>
 
 <div class="shop-view__container">
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
-
-    <app-item-card></app-item-card>
+    <ng-container *ngFor="let item of items">
+        <app-item-card [item]="item"></app-item-card>
+    </ng-container>
 </div>
