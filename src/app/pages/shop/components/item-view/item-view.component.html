@@ -1,0 +1,21 @@
+<div class="item-card__page-container">
+    <div class="item-card__image-container">
+        <img [src]="imagePath" class="item-card__image" />
+    </div>
+
+    <div class="item-card__info-container">
+        <p class="item-card__info-header">{{ item.name }}</p>
+
+        <p class="item-card__info-header">Manufacturer {{ item.manufacturer }}</p>
+
+        <p class="item-card__info-header">Pret: {{ item.price }}</p>
+
+        <p class="item-card__info-header" *ngIf="item.isStock; else outOfStock">Is in stock</p>
+
+        <ng-template #outOfStock>
+            <p class="item-card__info-header">Out of stock</p>
+        </ng-template>
+
+        <p class="item-card__info-description">Description: {{ item.description }}</p>
+    </div>
+</div>

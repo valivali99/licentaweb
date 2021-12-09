@@ -1,0 +1,28 @@
+.item-card__image-container {
+    width: 500px;
+    height: 100%;
+    display: inline-block;
+}
+
+.item-card__image {
+    margin-top: 10%;
+}
+
+.item-card__info-container {
+    display: inline-block;
+    width: calc(80% - 500px);
+}
+
+.item-card__page-container {
+    height: calc(100% - 55px);
+    display: flex;
+    align-items: center;
+}
+
+.item-card__info-header {
+    font-size: 40px;
+}
+
+.item-card__info-description {
+    font-size: 20px;
+}

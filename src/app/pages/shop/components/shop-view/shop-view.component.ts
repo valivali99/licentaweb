@@ -12,7 +12,7 @@ import { FilterViewComponent } from '../filter-view/filter-view.component';
 export class ShopViewComponent implements OnInit {
     items!: Item[];
 
-    constructor(private bottomSheet: MatBottomSheet, private itemService: ItemService) {}
+    constructor(private bottomSheet: MatBottomSheet, public itemService: ItemService) {}
 
     ngOnInit(): void {
         this.getItems();

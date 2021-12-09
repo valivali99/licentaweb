@@ -12,6 +12,7 @@ import { ShopViewComponent } from './pages/shop/components/shop-view/shop-view.c
 import { ItemCardComponent } from './shared/components/item-card/item-card.component';
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { MaterialModule } from './shared/modules/material/material.module';
+import { ItemViewComponent } from './pages/shop/components/item-view/item-view.component';
 
 @NgModule({
     declarations: [
@@ -22,7 +23,8 @@ import { MaterialModule } from './shared/modules/material/material.module';
         ShopSidenavComponent,
         ItemCardComponent,
         LoginViewComponent,
-        FilterViewComponent
+        FilterViewComponent,
+        ItemViewComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
     providers: [],

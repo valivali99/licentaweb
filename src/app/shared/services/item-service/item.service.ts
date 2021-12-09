@@ -15,4 +15,12 @@ export class ItemService {
     getItems(): Observable<Item[]> {
         return this.http.get<Item[]>(this.serviceUrl);
     }
+
+    getItem(id: string): Observable<Item> {
+        return this.http.get<Item>(`${this.serviceUrl}/${id}`);
+    }
+
+    getItemRoute(item: Item): string {
+        return `/shop/${item._id}`;
+    }
 }
