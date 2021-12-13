@@ -1,28 +1,29 @@
 .item-card__image-container {
     width: 500px;
-    height: 100%;
     display: inline-block;
 }
 
 .item-card__image {
     margin-top: 10%;
+    width: 100%;
 }
 
 .item-card__info-container {
     display: inline-block;
-    width: calc(80% - 500px);
+    width: calc(90% - 500px);
+    margin-left: 5%;
 }
 
 .item-card__page-container {
-    height: calc(100% - 55px);
     display: flex;
     align-items: center;
+    height: calc(100vh - 55px);
 }
 
 .item-card__info-header {
-    font-size: 40px;
+    font-size: 5vh;
 }
 
 .item-card__info-description {
-    font-size: 20px;
+    font-size: 3vh;
 }

@@ -10,7 +10,17 @@ import { environment } from 'src/environments/environment';
     styleUrls: ['./item-view.component.scss']
 })
 export class ItemViewComponent implements OnInit {
-    item!: Item;
+    item: Item = {
+        _id: '',
+        name: '',
+        type: '',
+        price: 0,
+        color: '',
+        manufacturer: '',
+        isStock: false,
+        image: '',
+        description: ''
+    };
     imagePath = '';
 
     constructor(private itemService: ItemService, private route: ActivatedRoute) {}

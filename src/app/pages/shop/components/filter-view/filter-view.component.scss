@@ -1,5 +1,6 @@
 .shop-sidenav__container {
     text-align: center;
+    font-family: 'Dancing Script';
 }
 
 .shop-sidenav__filter-title {
@@ -11,15 +12,10 @@
     font-size: 15px;
 }
 
-.shop-sidenav__filter-list-container {
-    width: 100px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
 mat-checkbox {
     float: left;
     display: block;
+    font-family: 'Dancing Script';
 }
 
 mat-slider {
@@ -48,4 +44,35 @@ mat-slider {
 
 ::ng-deep .mat-slider-thumb-label-text {
     color: white;
+}
+
+.shop-sidenav__filter-list-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+}
+
+.shop-sidenav__filter-list-item {
+    background-color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+.example-section {
+    margin: 12px 0;
+}
+
+.example-margin {
+    margin: 0 12px;
+}
+
+ul {
+    list-style-type: none;
+    margin-top: 4px;
+}
+
+li {
+    display: block;
 }
