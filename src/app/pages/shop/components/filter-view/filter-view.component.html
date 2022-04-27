@@ -14,33 +14,15 @@
         (input)="updatePrice($event.value)"
     ></mat-slider>
 
-    <!-- <div class="shop-sidenav__filter-list-container">
-        <ng-container *ngFor="let item of itemTypes">
-            <div class="shop-sidenav__filter-list-item">
-                <mat-checkbox>{{ item }}</mat-checkbox>
-            </div>
-        </ng-container>
-    </div> -->
+    <div>
+        <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+            {{ filter.name }}
+        </mat-checkbox>
 
-    <section class="example-section">
-        <span class="example-list-section">
-            <mat-checkbox
-                class="example-margin"
-                [checked]="allComplete"
-                [indeterminate]="someComplete()"
-                (change)="setAll($event.checked)"
-            >
-                {{ filter.name }}
+        <ng-container *ngFor="let subtask of filter.subtasks">
+            <mat-checkbox [(ngModel)]="subtask.completed" (ngModelChange)="updateAllComplete()">
+                {{ subtask.name }}
             </mat-checkbox>
-        </span>
-        <span class="example-list-section">
-            <ul>
-                <li *ngFor="let subtask of filter.subtasks">
-                    <mat-checkbox [(ngModel)]="subtask.completed" (ngModelChange)="updateAllComplete()">
-                        {{ subtask.name }}
-                    </mat-checkbox>
-                </li>
-            </ul>
-        </span>
-    </section>
+        </ng-container>
+    </div>
 </div>

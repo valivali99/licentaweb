@@ -1,7 +1,7 @@
 <div class="item-card__container">
     <div class="item-card__image-container">
         <div class="item-card__buy-icon-container">
-            <mat-icon>shopping_cart</mat-icon>
+            <mat-icon (click)="addToCart($event)">shopping_cart</mat-icon>
         </div>
 
         <img class="item-card__image" [src]="path" />
@@ -10,12 +10,6 @@
             <p class="item-card__text">{{ item.name }}</p>
 
             <p class="item-card__text">Price: {{ item.price }}</p>
-
-            <p class="item-card__text" *ngIf="item.isStock; else notAvailable">Available</p>
-
-            <ng-template #notAvailable>
-                <p class="item-card__text">Not Available</p>
-            </ng-template>
         </div>
     </div>
 </div>

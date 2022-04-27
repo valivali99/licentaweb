@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Item } from 'src/app/shared/models/itemModel';
 import { ItemService } from 'src/app/shared/services/item-service/item.service';
-import { FilterViewComponent } from '../filter-view/filter-view.component';
 
 @Component({
     selector: 'app-shop-view',
@@ -10,9 +10,14 @@ import { FilterViewComponent } from '../filter-view/filter-view.component';
     styleUrls: ['./shop-view.component.scss']
 })
 export class ShopViewComponent implements OnInit {
+
+    searchForm = new FormGroup({
+        searchText: new FormControl('')
+    })
+
     items!: Item[];
 
-    constructor(private bottomSheet: MatBottomSheet, public itemService: ItemService) {}
+    constructor(private bottomSheet: MatBottomSheet, public itemService: ItemService) { }
 
     ngOnInit(): void {
         this.getItems();
@@ -21,10 +26,32 @@ export class ShopViewComponent implements OnInit {
     getItems(): void {
         this.itemService.getItems().subscribe((response: Item[]) => {
             this.items = response;
+            response.forEach(element => {
+                this.items.push(element)
+            });
+            response.forEach(element => {
+                this.items.push(element)
+            });
+            response.forEach(element => {
+                this.items.push(element)
+            });
         });
+        // this.items = [
+        //     {
+        //         _id: '61af5d60cf516304572efaf2',
+        //         name: "Chitara Clasica 4/4 39 Grape + husa",
+        //         type: "Guitar",
+        //         price: 470,
+        //         color: "orange",
+        //         manufacturer: "Born Free",
+        //         isStock: true,
+        //         description: "Chitara Clasica potrivita de la 1,50 m inaltime Tastatura din lemn de ...",
+        //         image: "uploads/1638882656297.png",
+        //     }
+        // ]
     }
 
-    openBottomSheet(): void {
-        this.bottomSheet.open(FilterViewComponent);
+    filter(): string {
+        return this.searchForm.controls['searchText'].value.toLowerCase();
     }
 }

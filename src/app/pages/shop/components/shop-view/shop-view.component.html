@@ -1,7 +1,19 @@
-<button mat-raised-button (click)="openBottomSheet()" class="shop-view__filters-button">Filters</button>
+<form [formGroup]="searchForm" class="shop-view__search-container">
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Search</mat-label>
+        <input formControlName="searchText" (keyup)="filter()" matInput />
+    </mat-form-field>
+</form>
 
-<div class="shop-view__container">
-    <ng-container *ngFor="let item of items">
-        <app-item-card [item]="item" [routerLink]="itemService.getItemRoute(item)"></app-item-card>
-    </ng-container>
+<div class="shop-view__products-container">
+    <div class="shop-view__filter-container">
+        <app-filter-view></app-filter-view>
+    </div>
+    <div class="shop-view__container">
+        <ng-container *ngFor="let item of items">
+            <ng-container *ngIf="item.name.toLowerCase().includes(filter()) || filter() === ''">
+                <app-item-card [item]="item" [routerLink]="itemService.getItemRoute(item)"></app-item-card>
+            </ng-container>
+        </ng-container>
+    </div>
 </div>

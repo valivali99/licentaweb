@@ -11,5 +11,13 @@
         <p>Info</p>
 
         <p class="navbar__log-in-text" [routerLink]="loginRoute">Log In</p>
+
+        <mat-icon
+            [matBadge]="cartService.getCartNumberOfItems()"
+            matBadgeOverlap="false"
+            class="navbar__cart-icon"
+            [routerLink]="cartRoute"
+            >shopping_cart</mat-icon
+        >
     </div>
 </div>

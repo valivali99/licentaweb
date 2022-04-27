@@ -13,6 +13,9 @@ import { ItemCardComponent } from './shared/components/item-card/item-card.compo
 import { NavbarComponent } from './shared/components/navbar/navbar.component';
 import { MaterialModule } from './shared/modules/material/material.module';
 import { ItemViewComponent } from './pages/shop/components/item-view/item-view.component';
+import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
+import { CartItemComponent } from './pages/cart/cart-item/cart-item.component';
+import { RatingStarsComponent } from './pages/shop/components/rating-stars/rating-stars.component';
 
 @NgModule({
     declarations: [
@@ -24,7 +27,10 @@ import { ItemViewComponent } from './pages/shop/components/item-view/item-view.c
         ItemCardComponent,
         LoginViewComponent,
         FilterViewComponent,
-        ItemViewComponent
+        ItemViewComponent,
+        CartPageComponent,
+        CartItemComponent,
+        RatingStarsComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
     providers: [],

@@ -1,21 +1,31 @@
-<div class="item-card__page-container">
-    <div class="item-card__image-container">
-        <img [src]="imagePath" class="item-card__image" />
-    </div>
+<div class="item-view__background">
+    <div class="item-card__page-container">
+        <div class="item-view__left-container">
+            <p class="item-card__info-header bold">
+                {{ item.name }}
+            </p>
 
-    <div class="item-card__info-container">
-        <p class="item-card__info-header">{{ item.name }}</p>
+            <img [src]="imagePath" class="item-card__image" />
 
-        <p class="item-card__info-header">Manufacturer: {{ item.manufacturer }}</p>
+            <p class="item-card__info-header"><span class="bold">Price: </span>{{ item.price }} $</p>
+        </div>
 
-        <p class="item-card__info-header">Pret: {{ item.price }}</p>
+        <div class="item-view__right-container">
+            <div class="item-view__stars-container">
+                <app-rating-stars [rating]="'5'"></app-rating-stars>
+            </div>
 
-        <p class="item-card__info-header" *ngIf="item.isStock; else outOfStock">Is in stock</p>
+            <ng-container *ngIf="item.isStock; else notInStock">
+                <div class="item-view__stock-container"><mat-icon>check_circle</mat-icon> In stock</div>
+            </ng-container>
 
-        <ng-template #outOfStock>
-            <p class="item-card__info-header">Out of stock</p>
-        </ng-template>
+            <ng-template #notInStock>
+                <div class="item-view__stock-container"><mat-icon>remove_circle</mat-icon> Not in stock</div>
+            </ng-template>
 
-        <p class="item-card__info-description">Description: {{ item.description }}</p>
+            <span class="item-view__description-title bold">Description: </span>
+
+            <div class="item-view__description-area">{{ item.description }}</div>
+        </div>
     </div>
 </div>

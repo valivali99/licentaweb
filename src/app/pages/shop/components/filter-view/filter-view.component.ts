@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { MatBottomSheetRef } from '@angular/material/bottom-sheet';
 import { Filter } from 'src/app/shared/models/filterModel';
 
 @Component({
@@ -8,7 +7,7 @@ import { Filter } from 'src/app/shared/models/filterModel';
     styleUrls: ['./filter-view.component.scss']
 })
 export class FilterViewComponent implements OnInit {
-    constructor(private _bottomSheetRef: MatBottomSheetRef<FilterViewComponent>) {}
+    constructor() { }
 
     currentPrice = 0;
 
@@ -22,12 +21,7 @@ export class FilterViewComponent implements OnInit {
         ]
     };
 
-    ngOnInit(): void {}
-
-    openLink(event: MouseEvent): void {
-        this._bottomSheetRef.dismiss();
-        event.preventDefault();
-    }
+    ngOnInit(): void { }
 
     formatLabel(value: number) {
         if (value >= 10000) {

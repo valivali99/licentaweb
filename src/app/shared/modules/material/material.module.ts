@@ -30,8 +30,10 @@ import { MatTableModule } from '@angular/material/table';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { MatBadgeModule } from '@angular/material/badge';
 
 const dependencies = [
+    MatBadgeModule,
     MatBottomSheetModule,
     FormsModule,
     ReactiveFormsModule,
@@ -74,4 +76,4 @@ const dependencies = [
     imports: dependencies,
     exports: dependencies
 })
-export class MaterialModule {}
+export class MaterialModule { }
