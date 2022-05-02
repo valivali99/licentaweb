@@ -3,6 +3,7 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Item } from 'src/app/shared/models/itemModel';
 import { ItemService } from 'src/app/shared/services/item-service/item.service';
+import { FilterModel } from '../../models/filter-model';
 
 @Component({
     selector: 'app-shop-view',
@@ -53,5 +54,9 @@ export class ShopViewComponent implements OnInit {
 
     filter(): string {
         return this.searchForm.controls['searchText'].value.toLowerCase();
+    }
+
+    getFilters($event: FilterModel): void {
+        console.log($event)
     }
 }

@@ -16,6 +16,7 @@ import { ItemViewComponent } from './pages/shop/components/item-view/item-view.c
 import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { CartItemComponent } from './pages/cart/cart-item/cart-item.component';
 import { RatingStarsComponent } from './pages/shop/components/rating-stars/rating-stars.component';
+import { RegisterPageComponent } from './pages/login/register-page/register-page.component';
 
 @NgModule({
     declarations: [
@@ -30,7 +31,8 @@ import { RatingStarsComponent } from './pages/shop/components/rating-stars/ratin
         ItemViewComponent,
         CartPageComponent,
         CartItemComponent,
-        RatingStarsComponent
+        RatingStarsComponent,
+        RegisterPageComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
     providers: [],
