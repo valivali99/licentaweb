@@ -26,6 +26,5 @@ export class ItemCardComponent implements OnInit {
         $event.stopPropagation();
 
         this.cartService.addItemToCart(this.item);
-        console.log(this.cartService.cartArray)
     }
 }

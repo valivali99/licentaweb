@@ -1,18 +1,19 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-rating-stars',
   templateUrl: './rating-stars.component.html',
   styleUrls: ['./rating-stars.component.scss']
 })
-export class RatingStarsComponent {
+export class RatingStarsComponent implements OnInit {
 
-  @Input() rating: string = '4';
+  @Input() rating!: string;
   imageUrl = "";
 
-  constructor() {
-    this.imageUrl = "../../../../../assets/stars/" + this.rating + ".png";
-  }
+  constructor() { }
 
+  ngOnInit(): void {
+    this.imageUrl = "assets/stars/" + this.rating + ".png";
+  }
 
 }

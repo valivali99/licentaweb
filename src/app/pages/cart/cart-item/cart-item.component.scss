@@ -3,18 +3,19 @@
     height: 10rem;
     margin: 20px 3%;
     display: flex;
-
+    overflow: auto;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
 }
 
 .cart-item__image {
+    text-align: center;
     height: 8rem;
     width: 12rem;
 }
 
 img {
     height: 100%;
-    width: 100%;
+    width: auto;
     margin-top: 1rem;
     margin-left: 1rem;
     filter: none;

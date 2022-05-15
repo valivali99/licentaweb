@@ -7,12 +7,12 @@
 
             <img [src]="imagePath" class="item-card__image" />
 
-            <p class="item-card__info-header"><span class="bold">Price: </span>{{ item.price }} $</p>
+            <p class="item-card__info-header"><span class="bold">Price: </span>{{ item.price }} RON</p>
         </div>
 
         <div class="item-view__right-container">
             <div class="item-view__stars-container">
-                <app-rating-stars [rating]="'5'"></app-rating-stars>
+                <app-rating-stars [rating]="item.rating.toString()"></app-rating-stars>
             </div>
 
             <ng-container *ngIf="item.isStock; else notInStock">

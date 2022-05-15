@@ -30,7 +30,7 @@ export class RegisterPageComponent implements OnInit {
       name: this.registerForm.get('name')!.value
     }
 
-    this.authenticationService.register(registerBody).subscribe((result: any) => {
+    this.authenticationService.register(registerBody).subscribe(() => {
       this.snackBar.open('You have successfully registered, please log in now.', 'X', {
         duration: 3000
       });

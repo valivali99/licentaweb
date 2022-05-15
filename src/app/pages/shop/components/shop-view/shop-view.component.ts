@@ -27,15 +27,6 @@ export class ShopViewComponent implements OnInit {
     getItems(): void {
         this.itemService.getItems().subscribe((response: Item[]) => {
             this.items = response;
-            response.forEach(element => {
-                this.items.push(element)
-            });
-            response.forEach(element => {
-                this.items.push(element)
-            });
-            response.forEach(element => {
-                this.items.push(element)
-            });
         });
         // this.items = [
         //     {

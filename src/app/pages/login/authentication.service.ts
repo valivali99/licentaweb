@@ -13,7 +13,6 @@ export class AuthenticationService {
 
   constructor(private http: HttpClient) { }
 
-
   login(body: LoginModel): any {
     return this.http.post<LoginModel>(`${this.authenticationUrl}/login`, body);
   }

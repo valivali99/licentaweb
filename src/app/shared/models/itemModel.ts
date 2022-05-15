@@ -8,4 +8,5 @@ export interface Item {
     isStock: boolean;
     image: string;
     description: string;
+    rating: number;
 }

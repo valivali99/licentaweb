@@ -8,22 +8,9 @@ import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 })
 export class CartPageComponent implements OnInit {
 
-  isCartEmpty: boolean = false;
+  isCartEmpty: boolean = true;
 
-  item = {
-    _id: '61af5d60cf516304572efaf2',
-    name: "Chitara Clasica 4/4 39 Grape + husa",
-    type: "Guitar",
-    price: 470,
-    color: "orange",
-    manufacturer: "Born Free",
-    isStock: true,
-    description: "Chitara Clasica potrivita de la 1,50 m inaltime Tastatura din lemn de ...",
-    image: "uploads/1638882656297.png",
-  }
-
-
-  constructor(private cartService: CartService) { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
     this.initPage();

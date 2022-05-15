@@ -1,8 +1,6 @@
 <div class="cart-item__wrapper">
     <div class="cart-item__image">
-        <img
-            src="https://res.cloudinary.com/dk-find-out/image/upload/q_80,w_1920,f_auto/DCTM_Penguin_UK_DK_AL1007936_rt_q2qwiw.jpg"
-        />
+        <img [src]="imagePath" />
     </div>
 
     <div class="cart-item__quantity-wrapper">
@@ -14,8 +12,8 @@
     </div>
 
     <div class="cart-item__info-area">
-        <p class="cart-item__name">Music Alley MA34-N Classical Junior</p>
+        <p class="cart-item__name">{{ item.name }}</p>
 
-        <p>100$</p>
+        <p>{{ item.price }}</p>
     </div>
 </div>

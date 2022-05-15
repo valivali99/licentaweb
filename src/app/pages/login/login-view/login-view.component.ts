@@ -23,8 +23,8 @@ export class LoginViewComponent {
             password: this.loginForm.get('password')!.value
         }
 
-        this.authenticationService.login(loginBody).subscribe((data: any) => {
-            console.log(data)
+        this.authenticationService.login(loginBody).subscribe((data: string) => {
+            console.log(data);
         })
     }
 
