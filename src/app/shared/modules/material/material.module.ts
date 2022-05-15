@@ -31,9 +31,11 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
+import { MatRippleModule } from '@angular/material/core';
 
 const dependencies = [
     MatBadgeModule,
+    MatRippleModule,
     MatBottomSheetModule,
     FormsModule,
     ReactiveFormsModule,

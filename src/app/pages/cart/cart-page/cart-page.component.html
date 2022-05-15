@@ -10,8 +10,8 @@
     </ng-container>
     <ng-template #cartNotEmpty>
         <div class="cart__items-wrapper">
-            <ng-container *ngFor="let item of cartService.cartArray">
-                <app-cart-item [item]="item"></app-cart-item>
+            <ng-container *ngFor="let cartItem of cartItems">
+                <app-cart-item [cartItem]="cartItem"></app-cart-item>
             </ng-container>
         </div>
     </ng-template>

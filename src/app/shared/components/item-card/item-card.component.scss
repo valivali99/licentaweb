@@ -34,8 +34,9 @@
 .item-card__text {
     font-size: 20px;
     color: white;
-
+    width: 300px;
     white-space: nowrap;
+    overflow: hidden;
     text-overflow: ellipsis;
 
     margin-bottom: 0;

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Item } from 'src/app/shared/models/itemModel';
+import { CartItem } from 'src/app/shared/models/cartItemModel';
+import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -9,14 +10,38 @@ import { environment } from 'src/environments/environment';
 })
 export class CartItemComponent implements OnInit {
 
-  @Input() item!: Item;
+  @Input() cartItem!: CartItem;
 
   imagePath: string = '';
+  priceWithQuantity: number = 0;
 
-  constructor() { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
-    this.imagePath = `${environment.endpoint}/` + this.item.image;
+    this.getImagePath();
+    this.calculateItemPriceWithQuantity();
+  }
+
+  getImagePath(): void {
+    this.imagePath = `${environment.endpoint}/` + this.cartItem.item.image;
+  }
+
+  calculateItemPriceWithQuantity(): void {
+    this.priceWithQuantity = this.cartItem.item.price * this.cartItem.quantity;
+  }
+
+  addQuantity(): void {
+    this.cartService.addItemToCart(this.cartItem.item);
+    this.calculateItemPriceWithQuantity();
+  }
+
+  removeQuantity(): void {
+    this.cartService.removeItemFromCart(this.cartItem.item);
+    this.calculateItemPriceWithQuantity();
+  }
+
+  deleteItemFromCart(): void {
+    this.cartService.deleteItemFromCart(this.cartItem.item);
   }
 
 }

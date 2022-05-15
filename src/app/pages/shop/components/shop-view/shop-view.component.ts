@@ -28,19 +28,6 @@ export class ShopViewComponent implements OnInit {
         this.itemService.getItems().subscribe((response: Item[]) => {
             this.items = response;
         });
-        // this.items = [
-        //     {
-        //         _id: '61af5d60cf516304572efaf2',
-        //         name: "Chitara Clasica 4/4 39 Grape + husa",
-        //         type: "Guitar",
-        //         price: 470,
-        //         color: "orange",
-        //         manufacturer: "Born Free",
-        //         isStock: true,
-        //         description: "Chitara Clasica potrivita de la 1,50 m inaltime Tastatura din lemn de ...",
-        //         image: "uploads/1638882656297.png",
-        //     }
-        // ]
     }
 
     filter(): string {
