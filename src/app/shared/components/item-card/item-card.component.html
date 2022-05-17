@@ -1,7 +1,9 @@
 <div class="item-card__container">
     <div class="item-card__image-container">
         <div class="item-card__buy-icon-container">
-            <mat-icon (click)="addToCart($event)" matRipple>add_shopping_cart</mat-icon>
+            <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">
+                <mat-icon (click)="addToCart($event)" matRipple>add_shopping_cart</mat-icon>
+            </ng-container>
         </div>
 
         <img class="item-card__image" [src]="path" />

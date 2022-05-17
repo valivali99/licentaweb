@@ -10,14 +10,22 @@
 
         <p>Info</p>
 
-        <p class="navbar__log-in-text" [routerLink]="loginRoute">Log In</p>
+        <ng-container *ngIf="!authenticationService.checkIfUserIsLoggedIn(); else loggedIn">
+            <p class="navbar__log-in-text" [routerLink]="loginRoute">Log In</p>
+        </ng-container>
 
-        <mat-icon
-            [matBadge]="cartService.getCartNumberOfItems()"
-            matBadgeOverlap="false"
-            class="navbar__cart-icon"
-            [routerLink]="cartRoute"
-            >shopping_cart</mat-icon
-        >
+        <ng-template #loggedIn>
+            <p class="navbar__log-in-text" [routerLink]="loginRoute" (click)="logout()">Log Out</p>
+        </ng-template>
+
+        <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">
+            <mat-icon
+                [matBadge]="cartService.getCartNumberOfItems()"
+                matBadgeOverlap="false"
+                class="navbar__cart-icon"
+                [routerLink]="cartRoute"
+                >shopping_cart</mat-icon
+            >
+        </ng-container>
     </div>
 </div>

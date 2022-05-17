@@ -7,6 +7,7 @@ import { RegisterPageComponent } from './pages/login/register-page/register-page
 import { NewsletterViewComponent } from './pages/newsletter/components/newsletter-view/newsletter-view.component';
 import { ItemViewComponent } from './pages/shop/components/item-view/item-view.component';
 import { ShopViewComponent } from './pages/shop/components/shop-view/shop-view.component';
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 
 const routes: Routes = [
     {
@@ -31,6 +32,7 @@ const routes: Routes = [
     },
     {
         path: 'cart',
+        canActivate: [IsLoggedInGuard],
         component: CartPageComponent
     },
     {

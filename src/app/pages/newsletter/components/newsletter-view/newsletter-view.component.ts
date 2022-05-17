@@ -14,7 +14,7 @@ export class NewsletterViewComponent {
         email: new FormControl(null, Validators.required)
     });
 
-    constructor(private mailSerivce: MailService, private snackBar: MatSnackBar) {}
+    constructor(private mailSerivce: MailService, private snackBar: MatSnackBar) { }
 
     sendMail(): void {
         const email = this.mailForm.get('email')!.value;
@@ -25,8 +25,12 @@ export class NewsletterViewComponent {
             };
 
             this.mailSerivce.sendNewsLetterEmail(emailModel).subscribe({
-                next: () => this.snackBar.open('The email has been sent!', 'X'),
-                error: () => this.snackBar.open('An error has occured!', 'X')
+                next: () => this.snackBar.open('The email has been sent!', 'X', {
+                    duration: 3000
+                }),
+                error: () => this.snackBar.open('An error has occured!', 'X', {
+                    duration: 3000
+                })
             });
         }
     }

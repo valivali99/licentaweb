@@ -43,5 +43,4 @@ export class CartItemComponent implements OnInit {
   deleteItemFromCart(): void {
     this.cartService.deleteItemFromCart(this.cartItem.item);
   }
-
 }

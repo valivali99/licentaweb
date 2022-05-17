@@ -31,7 +31,7 @@ export class RegisterPageComponent implements OnInit {
     }
 
     this.authenticationService.register(registerBody).subscribe(() => {
-      this.snackBar.open('You have successfully registered, please log in now.', 'X', {
+      this.snackBar.open('You have been successfully registered, please log in now.', 'X', {
         duration: 3000
       });
       this.router.navigate(['login']);

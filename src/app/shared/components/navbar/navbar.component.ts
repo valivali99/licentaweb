@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { AuthenticationService } from 'src/app/pages/login/authentication.service';
 import { CartService } from '../../services/cart-service/cart.service';
 
 @Component({
@@ -13,12 +15,20 @@ export class NavbarComponent {
     loginRoute = 'login';
     cartRoute = 'cart';
 
-    constructor(public cartService: CartService) { }
+    constructor(public cartService: CartService, public authenticationService: AuthenticationService, private snackBar: MatSnackBar) { }
 
     playSound(note: string) {
         let audio = new Audio();
         //audio.src = '../../../assets/sounds/' + note + '.m4a';
         audio.load();
         audio.play();
+    }
+
+    logout(): void {
+        this.snackBar.open('You have been logged out.', 'X', {
+            duration: 3000
+        });
+
+        this.authenticationService.logOut()
     }
 }

@@ -3,6 +3,8 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { LoginModel } from '../models/login-model';
+import jwt_decode from 'jwt-decode';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
     selector: 'app-login-view',
@@ -15,7 +17,7 @@ export class LoginViewComponent {
         password: new FormControl(null, Validators.required)
     });
 
-    constructor(private authenticationService: AuthenticationService, private router: Router) { }
+    constructor(private authenticationService: AuthenticationService, private router: Router, private snackBar: MatSnackBar) { }
 
     login(): void {
         let loginBody: LoginModel = {
@@ -24,7 +26,11 @@ export class LoginViewComponent {
         }
 
         this.authenticationService.login(loginBody).subscribe((data: string) => {
-            console.log(data);
+            localStorage.setItem("user", jwt_decode(data));
+            this.router.navigate(['shop']);
+            this.snackBar.open('You have been logged in successfully!', 'X', {
+                duration: 3000
+            })
         })
     }
 

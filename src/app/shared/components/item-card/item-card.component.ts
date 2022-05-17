@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { environment } from 'src/environments/environment';
 import { Item } from '../../models/itemModel';
 import { CartService } from '../../services/cart-service/cart.service';
+import { AuthenticationService } from 'src/app/pages/login/authentication.service';
 @Component({
     selector: 'app-item-card',
     templateUrl: './item-card.component.html',
@@ -12,7 +13,7 @@ export class ItemCardComponent implements OnInit {
     cartArray: any;
     path: string = '';
 
-    constructor(private cartService: CartService) { }
+    constructor(private cartService: CartService, public authenticationService: AuthenticationService) { }
 
     ngOnInit(): void {
         this.applyItemPath();

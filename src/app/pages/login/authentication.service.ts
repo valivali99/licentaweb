@@ -20,4 +20,12 @@ export class AuthenticationService {
   register(body: RegisterModel): any {
     return this.http.post<RegisterModel>(`${this.authenticationUrl}/register`, body);
   }
+
+  checkIfUserIsLoggedIn(): boolean {
+    return localStorage.getItem("user") ? true : false;
+  }
+
+  logOut(): void {
+    localStorage.clear();
+  }
 }
