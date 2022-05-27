@@ -27,6 +27,7 @@ export class LoginViewComponent {
 
         this.authenticationService.login(loginBody).subscribe((data: string) => {
             localStorage.setItem("user", jwt_decode(data));
+
             this.router.navigate(['shop']);
             this.snackBar.open('You have been logged in successfully!', 'X', {
                 duration: 3000

@@ -25,3 +25,18 @@ body::-webkit-scrollbar-thumb {
 .bold {
     font-weight: bold;
 }
+
+.musify-button {
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px,
+        rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    width: fit-content;
+    margin: auto;
+    padding: 10px 30px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.musify-button:hover {
+    color: white;
+    background-color: black;
+}

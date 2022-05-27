@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
-import { MatBottomSheet } from '@angular/material/bottom-sheet';
 import { Item } from 'src/app/shared/models/itemModel';
 import { ItemService } from 'src/app/shared/services/item-service/item.service';
 import { FilterModel } from '../../models/filter-model';
@@ -17,8 +16,9 @@ export class ShopViewComponent implements OnInit {
     })
 
     items!: Item[];
+    filteredItems!: Item[];
 
-    constructor(private bottomSheet: MatBottomSheet, public itemService: ItemService) { }
+    constructor(public itemService: ItemService) { }
 
     ngOnInit(): void {
         this.getItems();
@@ -27,14 +27,31 @@ export class ShopViewComponent implements OnInit {
     getItems(): void {
         this.itemService.getItems().subscribe((response: Item[]) => {
             this.items = response;
+            this.filteredItems = response;
         });
     }
 
-    filter(): string {
+    searchByName(): string {
         return this.searchForm.controls['searchText'].value.toLowerCase();
     }
 
     getFilters($event: FilterModel): void {
-        console.log($event)
+        let finalFilteredItems: Item[] = [];
+
+        if ($event.types.length > 0) {
+            $event.types.forEach(type => {
+                this.items.forEach(item => {
+                    if (item.type.toLocaleLowerCase() === type.toLocaleLowerCase()) {
+                        finalFilteredItems.push(item);
+                    }
+                });
+            });
+        }
+        else {
+            finalFilteredItems = this.items;
+        }
+
+        this.filteredItems = finalFilteredItems.filter(el => el.price > $event.startingPrice);
+        this.searchByName();
     }
 }

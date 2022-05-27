@@ -16,6 +16,8 @@
 
         <ng-template #loggedIn>
             <p class="navbar__log-in-text" [routerLink]="loginRoute" (click)="logout()">Log Out</p>
+
+            <p class="navbar__log-in-text">{{ authenticationService.getUserInfo().name }}</p>
         </ng-template>
 
         <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">

@@ -25,6 +25,10 @@ export class AuthenticationService {
     return localStorage.getItem("user") ? true : false;
   }
 
+  getUserInfo(): any {
+    return localStorage.getItem("user");
+  }
+
   logOut(): void {
     localStorage.clear();
   }

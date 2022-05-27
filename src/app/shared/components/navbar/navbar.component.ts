@@ -1,8 +1,7 @@
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { AuthenticationService } from 'src/app/pages/login/authentication.service';
 import { CartService } from '../../services/cart-service/cart.service';
-
+import { AuthenticationService } from 'src/app/pages/login/authentication.service';
 @Component({
     selector: 'app-navbar',
     templateUrl: './navbar.component.html',

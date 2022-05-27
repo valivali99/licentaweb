@@ -19,7 +19,8 @@ export class FilterViewComponent {
         subtasks: [
             { name: 'Guitar', completed: false },
             { name: 'Piano', completed: false },
-            { name: 'Violin', completed: false }
+            { name: 'Violin', completed: false },
+            { name: 'Single-Reed', completed: false }
         ]
     };
 

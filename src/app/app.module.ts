@@ -17,6 +17,7 @@ import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { CartItemComponent } from './pages/cart/cart-item/cart-item.component';
 import { RatingStarsComponent } from './pages/shop/components/rating-stars/rating-stars.component';
 import { RegisterPageComponent } from './pages/login/register-page/register-page.component';
+import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,7 @@ import { RegisterPageComponent } from './pages/login/register-page/register-page
         RegisterPageComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
-    providers: [],
+    providers: [IsLoggedInGuard],
     bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

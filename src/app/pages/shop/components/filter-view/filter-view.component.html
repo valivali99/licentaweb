@@ -6,10 +6,10 @@
     <mat-slider
         thumbLabel
         [displayWith]="formatLabel"
-        tickInterval="250"
-        step="250"
+        tickInterval="100"
+        step="100"
         min="0"
-        max="10000"
+        max="3000"
         aria-label="units"
         (input)="updatePrice($event.value)"
     ></mat-slider>
