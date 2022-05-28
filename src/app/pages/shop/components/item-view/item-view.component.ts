@@ -12,8 +12,8 @@ import { environment } from 'src/environments/environment';
     styleUrls: ['./item-view.component.scss']
 })
 export class ItemViewComponent {
-    item!: Item;
 
+    item!: Item;
     imagePath = '';
 
     constructor(private itemService: ItemService, private route: ActivatedRoute, private cartService: CartService, public authenticationService: AuthenticationService) {
