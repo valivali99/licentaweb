@@ -1,0 +1,55 @@
+.shop-sidenav__container {
+    text-align: center;
+    font-family: 'Dancing Script';
+    width: 80%;
+    margin-left: 10%;
+    display: inline-block;
+}
+
+.shop-sidenav__filter-title {
+    font-size: 25px;
+}
+
+.shop-sidenav__filter-text {
+    color: rgb(0, 0, 0);
+    font-size: 15px;
+}
+
+mat-checkbox {
+    display: block;
+    font-family: 'Dancing Script';
+    width: fit-content;
+    margin-left: 35%;
+}
+
+mat-slider {
+    width: 100px;
+}
+
+::ng-deep .mat-accent .mat-slider-thumb {
+    background-color: rgb(119, 119, 119);
+}
+
+::ng-deep .mat-accent .mat-slider-thumb-label {
+    background-color: rgb(0, 0, 0);
+
+    .mat-slider-thumb-label-text {
+        color: white;
+    }
+}
+
+::ng-deep .mat-accent .mat-slider-track-fill {
+    background-color: rgb(0, 0, 0);
+}
+
+::ng-deep .mat-accent .mat-slider-track-wrapper {
+    background-color: rgb(194, 194, 194);
+}
+
+::ng-deep .mat-slider-thumb-label-text {
+    color: white;
+}
+
+.musify-button {
+    margin-top: 20px;
+}

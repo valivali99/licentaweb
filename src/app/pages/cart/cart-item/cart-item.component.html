@@ -1,0 +1,23 @@
+<ng-container *ngIf="cartItem.quantity">
+    <div class="cart-item__wrapper">
+        <div class="cart-item__quantity-wrapper">
+            <div class="cart-item__quantity-buton" (click)="removeQuantity()">-</div>
+
+            <p class="cart-item__quantity-text">{{ cartItem.quantity }}</p>
+
+            <div class="cart-item__quantity-buton" (click)="addQuantity()">+</div>
+
+            <mat-icon class="cart-item__delete-icon" (click)="deleteItemFromCart()">remove_shopping_cart</mat-icon>
+        </div>
+
+        <div class="cart-item__image">
+            <img [src]="imagePath" />
+        </div>
+
+        <div class="cart-item__info-area">
+            <p class="cart-item__name">{{ cartItem.item.name }}</p>
+
+            <p>{{ cartItem.item.price }} RON/BUC &nbsp; &nbsp; TOTAL: {{ priceWithQuantity }} RON</p>
+        </div>
+    </div>
+</ng-container>

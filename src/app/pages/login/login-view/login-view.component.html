@@ -1,0 +1,27 @@
+<div class="login__left-side-page-container">
+    <div class="login__credentials-area">
+        <p class="login__header">Musify</p>
+
+        <form [formGroup]="loginForm">
+            <div>
+                <mat-form-field appearance="standard" floatLabel="always" class="login__form-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                </mat-form-field>
+            </div>
+
+            <div>
+                <mat-form-field appearance="standard" floatLabel="always" class="login__form-field">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" />
+                </mat-form-field>
+            </div>
+        </form>
+
+        <button type="button" class="btn btn-dark login__button" (click)="login()">Log In</button>
+
+        <p class="login__register-text" (click)="goToRegister()">Don't have an account? Register here!</p>
+    </div>
+</div>
+
+<div class="login__right-side-page-container"></div>

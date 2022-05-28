@@ -1,0 +1,28 @@
+<div class="shop-sidenav__container">
+    <p class="shop-sidenav__filter-title">Filters:</p>
+
+    <p class="shop-sidenav__filter-text">Starting Price: {{ currentPrice }}</p>
+
+    <mat-slider
+        thumbLabel
+        [displayWith]="formatLabel"
+        tickInterval="100"
+        step="100"
+        min="0"
+        max="3000"
+        aria-label="units"
+        (input)="updatePrice($event.value)"
+    ></mat-slider>
+
+    <div>
+        <mat-checkbox [checked]="allComplete" [indeterminate]="someComplete()" (change)="setAll($event.checked)">
+            {{ filter.name }}
+        </mat-checkbox>
+
+        <ng-container *ngFor="let subtask of filter.subtasks">
+            <mat-checkbox [(ngModel)]="subtask.completed" (ngModelChange)="updateAllComplete()">
+                {{ subtask.name }}
+            </mat-checkbox>
+        </ng-container>
+    </div>
+</div>

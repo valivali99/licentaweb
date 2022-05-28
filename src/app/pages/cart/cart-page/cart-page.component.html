@@ -1,0 +1,18 @@
+<div class="cart__background-wrapper">
+    <ng-container *ngIf="cartService.getCartNumberOfItems() == 0; else cartNotEmpty">
+        <div class="cart__empty-wrapper">
+            <p class="cart__empty-message">Your cart is empty :(</p>
+
+            <p class="cart__back-message">Get back to shopping</p>
+
+            <div class="cart__shop-button" (click)="navigateToShop()">Go back</div>
+        </div>
+    </ng-container>
+    <ng-template #cartNotEmpty>
+        <div class="cart__items-wrapper">
+            <ng-container *ngFor="let cartItem of cartItems">
+                <app-cart-item [cartItem]="cartItem"></app-cart-item>
+            </ng-container>
+        </div>
+    </ng-template>
+</div>

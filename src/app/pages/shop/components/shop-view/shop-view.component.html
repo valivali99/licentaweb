@@ -1,0 +1,19 @@
+<form [formGroup]="searchForm" class="shop-view__search-container">
+    <mat-form-field class="example-full-width" appearance="outline">
+        <mat-label>Search</mat-label>
+        <input formControlName="searchText" (keyup)="searchByName()" matInput />
+    </mat-form-field>
+</form>
+
+<div class="shop-view__products-container">
+    <div class="shop-view__filter-container">
+        <app-filter-view (filterEvent)="getFilters($event)"></app-filter-view>
+    </div>
+    <div class="shop-view__container">
+        <ng-container *ngFor="let item of filteredItems">
+            <ng-container *ngIf="item.name.toLowerCase().includes(searchByName()) || searchByName() === ''">
+                <app-item-card [item]="item" [routerLink]="itemService.getItemRoute(item)"></app-item-card>
+            </ng-container>
+        </ng-container>
+    </div>
+</div>

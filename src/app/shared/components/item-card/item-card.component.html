@@ -1,0 +1,17 @@
+<div class="item-card__container">
+    <div class="item-card__image-container">
+        <div class="item-card__buy-icon-container">
+            <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">
+                <mat-icon (click)="addToCart($event)" matRipple>add_shopping_cart</mat-icon>
+            </ng-container>
+        </div>
+
+        <img class="item-card__image" [src]="path" />
+
+        <div class="item-card__info-area">
+            <p class="item-card__text">{{ item.name }}</p>
+
+            <p class="item-card__text">Price: {{ item.price }} RON</p>
+        </div>
+    </div>
+</div>

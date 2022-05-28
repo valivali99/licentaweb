@@ -1,0 +1,38 @@
+.home-view__card {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+}
+
+.home-view__first-card {
+    background-image: url('../../../../../assets/home1.jpg');
+}
+
+.home-view__second-card {
+    background-image: url('../../../../../assets/home2.jpg');
+    filter: grayscale(100%);
+}
+
+.home-view__third-card {
+    background-image: url('../../../../../assets/home3.jpg');
+    filter: grayscale(100%);
+}
+
+.home-view__page-container {
+    width: 100%;
+    overflow-x: hidden;
+}
+
+.home-view__card-text {
+    color: black;
+    font-size: 40px;
+    padding: 40px;
+}
+
+.home-view__card-text-wrapper {
+    margin: auto;
+    text-align: center;
+    width: 50%;
+    background-color: rgb(255, 255, 255);
+    border-radius: 93% 7% 94% 6% / 5% 95% 5% 95%;
+}

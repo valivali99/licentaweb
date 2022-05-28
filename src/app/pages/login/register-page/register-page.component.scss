@@ -1,0 +1,55 @@
+.register__page-container {
+    text-align: center;
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: hidden;
+    background-image: url('../../../../assets/register-background.jpg');
+}
+
+.register__form-container {
+    height: 500px;
+    width: 500px;
+    margin: auto;
+    margin-top: 50px;
+    border-radius: 5%;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.07) 0px 1px 2px, rgba(0, 0, 0, 0.07) 0px 2px 4px, rgba(0, 0, 0, 0.07) 0px 4px 8px,
+        rgba(0, 0, 0, 0.07) 0px 8px 16px, rgba(0, 0, 0, 0.07) 0px 16px 32px, rgba(0, 0, 0, 0.07) 0px 32px 64px;
+}
+
+.register__logo {
+    height: 130px;
+    width: auto;
+}
+
+.register__form-field {
+    width: 300px;
+}
+
+::ng-deep .mat-form-field {
+    font-family: 'Dancing Script';
+    font-size: 20px;
+}
+
+::ng-deep mat-label {
+    color: black;
+}
+
+.register__button {
+    font-size: 15px;
+    width: 200px;
+}
+
+.register__button--enabled {
+    background-color: black;
+    color: white;
+}
+
+.register__button--disabled {
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+}
+
+.register__helper-icon {
+    margin-left: 10px;
+}

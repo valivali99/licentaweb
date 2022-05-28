@@ -1,0 +1,33 @@
+<div class="navbar__container">
+    <div class="navbar__text-container">
+        <img class="navbar__logo" src="../../../../assets/logo.png" />
+
+        <p (click)="playSound('c')" [routerLink]="homeRoute">Home</p>
+
+        <p (click)="playSound('d')" [routerLink]="shopRoute">Shop</p>
+
+        <p (click)="playSound('e')" [routerLink]="newsletterRoute">Newsletter</p>
+
+        <p>Info</p>
+
+        <ng-container *ngIf="!authenticationService.checkIfUserIsLoggedIn(); else loggedIn">
+            <p class="navbar__log-in-text" [routerLink]="loginRoute">Log In</p>
+        </ng-container>
+
+        <ng-template #loggedIn>
+            <p class="navbar__log-in-text" [routerLink]="loginRoute" (click)="logout()">Log Out</p>
+
+            <p class="navbar__log-in-text">{{ authenticationService.getUserInfo().name }}</p>
+        </ng-template>
+
+        <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">
+            <mat-icon
+                [matBadge]="cartService.getCartNumberOfItems()"
+                matBadgeOverlap="false"
+                class="navbar__cart-icon"
+                [routerLink]="cartRoute"
+                >shopping_cart</mat-icon
+            >
+        </ng-container>
+    </div>
+</div>

@@ -1,0 +1,60 @@
+<div class="register__page-container">
+    <div class="register__form-container">
+        <img class="register__logo" src="../../../../assets/logo-inverted.png" />
+
+        <form [formGroup]="registerForm">
+            <div>
+                <mat-form-field appearance="standard" floatLabel="always" class="register__form-field">
+                    <mat-label>Email</mat-label>
+                    <input matInput formControlName="email" />
+                </mat-form-field>
+
+                <mat-icon
+                    class="register__helper-icon"
+                    matTooltip="Minimum of 6 characters required"
+                    matTooltipPosition="above"
+                    matTooltipHideDelay="100"
+                    >flag</mat-icon
+                >
+            </div>
+
+            <div>
+                <mat-form-field appearance="standard" floatLabel="always" class="register__form-field">
+                    <mat-label>Username</mat-label>
+                    <input matInput formControlName="name" type="text" />
+                </mat-form-field>
+
+                <mat-icon
+                    class="register__helper-icon"
+                    matTooltip="Valid Email format, and a minimum of 6 characters"
+                    matTooltipPosition="above"
+                    matTooltipHideDelay="100"
+                    >flag</mat-icon
+                >
+            </div>
+
+            <div>
+                <mat-form-field appearance="standard" floatLabel="always" class="register__form-field">
+                    <mat-label>Password</mat-label>
+                    <input matInput formControlName="password" type="password" />
+                </mat-form-field>
+
+                <mat-icon
+                    class="register__helper-icon"
+                    matTooltip="Minimum of 6 characters required"
+                    matTooltipPosition="above"
+                    matTooltipHideDelay="100"
+                    >flag</mat-icon
+                >
+            </div>
+
+            <ng-container *ngIf="registerForm.valid; else invalidForm">
+                <button class="register__button register__button--enabled" (click)="register()">Register</button>
+            </ng-container>
+
+            <ng-template #invalidForm>
+                <button class="register__button register__button--disabled">Complete the form correctly</button>
+            </ng-template>
+        </form>
+    </div>
+</div>
