@@ -11,6 +11,10 @@ import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 
 const routes: Routes = [
     {
+        path: '',
+        component: HomeViewComponent
+    },
+    {
         path: 'home',
         component: HomeViewComponent
     },

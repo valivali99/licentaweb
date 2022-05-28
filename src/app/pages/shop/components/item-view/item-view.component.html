@@ -19,17 +19,35 @@
                 <app-rating-stars [rating]="item.rating.toString()"></app-rating-stars>
             </div>
 
-            <ng-container *ngIf="item.isStock; else notInStock">
-                <div class="item-view__stock-container"><mat-icon>check_circle</mat-icon> In stock</div>
-            </ng-container>
+            <mat-stepper #stepper>
+                <mat-step>
+                    <ng-template matStepLabel>
+                        <span class="item-view__stepper-label">Description</span>
+                    </ng-template>
+                    <div class="item-view__description-area">{{ item.description }}</div>
+                </mat-step>
 
-            <ng-template #notInStock>
-                <div class="item-view__stock-container"><mat-icon>remove_circle</mat-icon> Not in stock</div>
-            </ng-template>
+                <mat-step>
+                    <ng-template matStepLabel>
+                        <span class="item-view__stepper-label">Instrument Type</span>
+                    </ng-template>
 
-            <span class="item-view__description-title bold">Description: </span>
+                    <app-item-type-description [instrumentType]="item.type"></app-item-type-description>
+                </mat-step>
+                <mat-step>
+                    <ng-template matStepLabel>
+                        <span class="item-view__stepper-label">Availability</span>
+                    </ng-template>
 
-            <div class="item-view__description-area">{{ item.description }}</div>
+                    <ng-container *ngIf="item.isStock; else notInStock">
+                        <div class="item-view__stock-container"><mat-icon>check_circle</mat-icon> In stock</div>
+                    </ng-container>
+
+                    <ng-template #notInStock>
+                        <div class="item-view__stock-container"><mat-icon>remove_circle</mat-icon> Not in stock</div>
+                    </ng-template>
+                </mat-step>
+            </mat-stepper>
         </div>
     </div>
 </div>

@@ -32,9 +32,11 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatBadgeModule } from '@angular/material/badge';
 import { MatRippleModule } from '@angular/material/core';
+import { MatStepperModule } from '@angular/material/stepper';
 
 const dependencies = [
     MatBadgeModule,
+    MatStepperModule,
     MatRippleModule,
     MatBottomSheetModule,
     FormsModule,

@@ -75,6 +75,7 @@ img {
     margin: 20px;
     box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
     padding: 10px;
+    font-family: 'Dancing Script';
 }
 
 .item-view__description-title {
@@ -82,7 +83,13 @@ img {
     margin-left: 20px;
 }
 
-.item-view__stars-container {
-    // margin: auto;
-    // width: fit-content;
+::ng-deep .mat-step-header .mat-step-icon {
+    background-color: black;
+    color: #fff;
+    font-family: 'Dancing Script';
+}
+
+.item-view__stepper-label {
+    font-family: 'Dancing Script' !important;
+    font-size: 20px;
 }
