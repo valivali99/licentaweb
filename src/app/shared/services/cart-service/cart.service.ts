@@ -57,4 +57,13 @@ export class CartService {
       found.quantity = 0;
     }
   }
+
+  getTotalPrice(): number {
+    let total = 0;
+    this.cartItems.forEach(cartItem => {
+      total += cartItem.item.price * cartItem.quantity;
+    });
+
+    return total;
+  }
 }

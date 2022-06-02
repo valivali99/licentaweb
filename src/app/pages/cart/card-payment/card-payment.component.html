@@ -1,0 +1,36 @@
+<div class="card__background-wrapper">
+    <div class="card__wrapper">
+        <div class="card__form-wrapper">
+            <form [formGroup]="cardForm">
+                <div class="card-payment__card-number-wrapper">
+                    <mat-form-field appearance="standard" floatLabel="always" class="card-payment__card-number-input">
+                        <mat-label>CARD NUMBER</mat-label>
+                        <input matInput formControlName="cardNumber" />
+                    </mat-form-field>
+                </div>
+
+                <div class="card-payment__card-info-wrapper">
+                    <mat-form-field
+                        appearance="standard"
+                        floatLabel="always"
+                        class="card-payment__card-info-input float-left"
+                    >
+                        <mat-label>EXP DATE</mat-label>
+                        <input matInput formControlName="expirationDate" />
+                    </mat-form-field>
+
+                    <mat-form-field
+                        appearance="standard"
+                        floatLabel="always"
+                        class="card-payment__card-info-input float-right"
+                    >
+                        <mat-label>CVV</mat-label>
+                        <input matInput formControlName="cvv" />
+                    </mat-form-field>
+                </div>
+            </form>
+        </div>
+
+        <div class="musify-button">SUBMIT PAYMENT</div>
+    </div>
+</div>

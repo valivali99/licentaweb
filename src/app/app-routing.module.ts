@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { CardPaymentComponent } from './pages/cart/card-payment/card-payment.component';
 import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { HomeViewComponent } from './pages/home/components/home-view/home-view.component';
 import { LoginViewComponent } from './pages/login/login-view/login-view.component';
@@ -17,6 +18,11 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeViewComponent
+    },
+    {
+        path: 'payment',
+        canActivate: [IsLoggedInGuard],
+        component: CardPaymentComponent
     },
     {
         path: 'shop',

@@ -1,0 +1,44 @@
+.card__background-wrapper {
+    background-image: url('../../../../assets/cartbackground.jpg');
+    width: 100%;
+    height: calc(100vh - 55px) !important;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.card__form-wrapper {
+    height: 200px;
+    margin-top: 30px;
+}
+
+.card__wrapper {
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin: auto;
+    background-color: white;
+    border-radius: 25px;
+    height: 300px;
+    width: 600px;
+}
+
+.card-payment__card-info-input {
+    margin: auto;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.card-payment__card-number-input {
+    width: 100%;
+}
+
+.card-payment__card-number-wrapper {
+    margin: auto;
+    margin-bottom: 40px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
+.card-payment__card-info-wrapper {
+    margin: auto;
+    width: 100%;
+}

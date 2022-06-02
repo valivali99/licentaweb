@@ -13,6 +13,14 @@
             <ng-container *ngFor="let cartItem of cartItems">
                 <app-cart-item [cartItem]="cartItem"></app-cart-item>
             </ng-container>
+
+            <div class="cart-item__total">
+                <div class="cart-item__total-text-wrapper">
+                    <p class="cart-item__text">TOTAL: {{ cartService.getTotalPrice() }} $</p>
+
+                    <p class="cart-item__text cart-item__text--right">CLICK TO CONTINUE</p>
+                </div>
+            </div>
         </div>
     </ng-template>
 </div>

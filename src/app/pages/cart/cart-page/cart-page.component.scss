@@ -57,3 +57,38 @@
 
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 }
+
+.cart-item__total {
+    width: 94%;
+    height: 10rem;
+    display: table;
+    overflow: hidden;
+    margin: auto;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    cursor: pointer;
+    box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+}
+
+.cart-item__total:hover {
+    color: white;
+    background-color: black;
+}
+
+.cart-item__total-text-wrapper {
+    font-size: 20px;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.cart-item__text {
+    width: fit-content;
+    font-size: 25px;
+    margin-left: 40px;
+    margin-right: 40px;
+    display: inline-block;
+}
+
+.cart-item__text--right {
+    float: right;
+}

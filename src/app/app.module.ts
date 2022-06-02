@@ -19,6 +19,7 @@ import { RatingStarsComponent } from './pages/shop/components/rating-stars/ratin
 import { RegisterPageComponent } from './pages/login/register-page/register-page.component';
 import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 import { ItemTypeDescriptionComponent } from './pages/shop/components/item-type-description/item-type-description.component';
+import { CardPaymentComponent } from './pages/cart/card-payment/card-payment.component';
 
 @NgModule({
     declarations: [
@@ -35,7 +36,8 @@ import { ItemTypeDescriptionComponent } from './pages/shop/components/item-type-
         CartItemComponent,
         RatingStarsComponent,
         RegisterPageComponent,
-        ItemTypeDescriptionComponent
+        ItemTypeDescriptionComponent,
+        CardPaymentComponent
     ],
     imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule],
     providers: [IsLoggedInGuard],
