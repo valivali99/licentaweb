@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
@@ -12,10 +12,10 @@ import { RegisterModel } from '../models/register-model';
 })
 export class RegisterPageComponent implements OnInit {
 
-  registerForm: FormGroup = new FormGroup({
-    name: new FormControl(null, [Validators.required, Validators.minLength(6)]),
-    email: new FormControl(null, [Validators.required, Validators.email, Validators.minLength(6)]),
-    password: new FormControl(null, [Validators.required, Validators.minLength(6)])
+  registerForm: UntypedFormGroup = new UntypedFormGroup({
+    name: new UntypedFormControl(null, [Validators.required, Validators.minLength(6)]),
+    email: new UntypedFormControl(null, [Validators.required, Validators.email, Validators.minLength(6)]),
+    password: new UntypedFormControl(null, [Validators.required, Validators.minLength(6)])
   });
 
   constructor(private authenticationService: AuthenticationService, private snackBar: MatSnackBar, private router: Router) { }

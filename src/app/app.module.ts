@@ -23,6 +23,9 @@ import { CardPaymentComponent } from './pages/cart/card-payment/card-payment.com
 import { NgPaymentCardModule } from 'ng-payment-card';
 import { ProfileViewComponent } from './pages/profile/profile-view/profile-view.component';
 import { AccountInfoContentComponent } from './pages/profile/account-info-content/account-info-content.component';
+import { InfoViewComponent } from './pages/info/info-view/info-view.component';
+import { GoogleMapsModule } from '@angular/google-maps';
+
 @NgModule({
     declarations: [
         AppComponent,
@@ -42,8 +45,9 @@ import { AccountInfoContentComponent } from './pages/profile/account-info-conten
         CardPaymentComponent,
         ProfileViewComponent,
         AccountInfoContentComponent,
+        InfoViewComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule, NgPaymentCardModule],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule, NgPaymentCardModule, GoogleMapsModule],
     providers: [IsLoggedInGuard],
     bootstrap: [AppComponent]
 })

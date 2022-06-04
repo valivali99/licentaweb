@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup } from '@angular/forms';
 import { Item } from 'src/app/shared/models/itemModel';
 import { ItemService } from 'src/app/shared/services/item-service/item.service';
 import { FilterModel } from '../../models/filter-model';
@@ -11,8 +11,8 @@ import { FilterModel } from '../../models/filter-model';
 })
 export class ShopViewComponent implements OnInit {
 
-    searchForm = new FormGroup({
-        searchText: new FormControl('')
+    searchForm = new UntypedFormGroup({
+        searchText: new UntypedFormControl('')
     })
 
     items!: Item[];

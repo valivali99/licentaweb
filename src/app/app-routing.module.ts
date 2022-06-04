@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { CardPaymentComponent } from './pages/cart/card-payment/card-payment.component';
 import { CartPageComponent } from './pages/cart/cart-page/cart-page.component';
 import { HomeViewComponent } from './pages/home/components/home-view/home-view.component';
+import { InfoViewComponent } from './pages/info/info-view/info-view.component';
 import { LoginViewComponent } from './pages/login/login-view/login-view.component';
 import { RegisterPageComponent } from './pages/login/register-page/register-page.component';
 import { NewsletterViewComponent } from './pages/newsletter/components/newsletter-view/newsletter-view.component';
@@ -19,6 +20,10 @@ const routes: Routes = [
     {
         path: 'home',
         component: HomeViewComponent
+    },
+    {
+        path: 'info',
+        component: InfoViewComponent
     },
     {
         path: 'payment',

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
 import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 
 @Component({
@@ -9,10 +9,10 @@ import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 })
 export class CardPaymentComponent implements OnInit {
 
-  cardForm: FormGroup = new FormGroup({
-    cardNumber: new FormControl(null, Validators.required),
-    expirationDate: new FormControl(null, Validators.required),
-    cvv: new FormControl(null, Validators.required)
+  cardForm: UntypedFormGroup = new UntypedFormGroup({
+    cardNumber: new UntypedFormControl(null, Validators.required),
+    expirationDate: new UntypedFormControl(null, Validators.required),
+    cvv: new UntypedFormControl(null, Validators.required)
   });
 
   constructor(public cartService: CartService) { }
