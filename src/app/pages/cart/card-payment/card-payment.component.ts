@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 
 @Component({
   selector: 'app-card-payment',
@@ -14,9 +15,13 @@ export class CardPaymentComponent implements OnInit {
     cvv: new FormControl(null, Validators.required)
   });
 
-  constructor() { }
+  constructor(public cartService: CartService) { }
 
   ngOnInit(): void {
+  }
+
+  processPayment($event: any) {
+    console.log($event)
   }
 
 }

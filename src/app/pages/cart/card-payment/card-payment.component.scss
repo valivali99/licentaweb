@@ -17,7 +17,7 @@
     margin: auto;
     background-color: white;
     border-radius: 25px;
-    height: 300px;
+    height: 350px;
     width: 600px;
 }
 
@@ -41,4 +41,11 @@
 .card-payment__card-info-wrapper {
     margin: auto;
     width: 100%;
+}
+
+.card__total-price {
+    width: fit-content;
+    font-size: 25px;
+    margin: auto;
+    margin-bottom: 15px;
 }

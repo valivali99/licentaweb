@@ -6,6 +6,7 @@ import { HomeViewComponent } from './pages/home/components/home-view/home-view.c
 import { LoginViewComponent } from './pages/login/login-view/login-view.component';
 import { RegisterPageComponent } from './pages/login/register-page/register-page.component';
 import { NewsletterViewComponent } from './pages/newsletter/components/newsletter-view/newsletter-view.component';
+import { ProfileViewComponent } from './pages/profile/profile-view/profile-view.component';
 import { ItemViewComponent } from './pages/shop/components/item-view/item-view.component';
 import { ShopViewComponent } from './pages/shop/components/shop-view/shop-view.component';
 import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
@@ -23,6 +24,11 @@ const routes: Routes = [
         path: 'payment',
         canActivate: [IsLoggedInGuard],
         component: CardPaymentComponent
+    },
+    {
+        path: 'profile',
+        canActivate: [IsLoggedInGuard],
+        component: ProfileViewComponent
     },
     {
         path: 'shop',

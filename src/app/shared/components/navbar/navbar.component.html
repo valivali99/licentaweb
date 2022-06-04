@@ -15,9 +15,21 @@
         </ng-container>
 
         <ng-template #loggedIn>
-            <p class="navbar__log-in-text" [routerLink]="loginRoute" (click)="logout()">Log Out</p>
+            <!-- <p class="navbar__log-in-text" [routerLink]="loginRoute" (click)="logout()">Log Out</p>
 
-            <p class="navbar__log-in-text">{{ authenticationService.getUserInfo().name }}</p>
+            <p class="navbar__log-in-text">{{ authenticationService.getUserInfo().name }}</p> -->
+
+            <mat-icon class="navbar__profile-icon" [matMenuTriggerFor]="profileMenu">account_circle</mat-icon>
+
+            <mat-menu #profileMenu="matMenu">
+                <button mat-menu-item [routerLink]="profileRoute">
+                    {{ authenticationService.getUserInfo().name }}
+                </button>
+
+                <button mat-menu-item [routerLink]="loginRoute" (click)="authenticationService.logOut()">
+                    Log Out
+                </button>
+            </mat-menu>
         </ng-template>
 
         <ng-container *ngIf="authenticationService.checkIfUserIsLoggedIn()">

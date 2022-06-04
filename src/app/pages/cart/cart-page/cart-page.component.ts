@@ -29,4 +29,9 @@ export class CartPageComponent implements OnInit {
     this.router.navigateByUrl('/shop');
   }
 
+  navigateToPayment(): void {
+    console.log(1)
+    this.router.navigateByUrl('/payment');
+  }
+
 }

@@ -13,6 +13,7 @@ export class NavbarComponent {
     newsletterRoute = 'newsletter';
     loginRoute = 'login';
     cartRoute = 'cart';
+    profileRoute = 'profile';
 
     constructor(public cartService: CartService, public authenticationService: AuthenticationService, private snackBar: MatSnackBar) { }
 

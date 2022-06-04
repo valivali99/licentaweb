@@ -26,10 +26,10 @@ export class AuthenticationService {
   }
 
   getUserInfo(): any {
-    return localStorage.getItem("user");
+    return JSON.parse(localStorage.getItem('user')!);
   }
 
   logOut(): void {
-    localStorage.clear();
+    localStorage.removeItem('user');
   }
 }

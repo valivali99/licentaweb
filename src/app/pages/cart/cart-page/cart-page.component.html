@@ -18,7 +18,9 @@
                 <div class="cart-item__total-text-wrapper">
                     <p class="cart-item__text">TOTAL: {{ cartService.getTotalPrice() }} $</p>
 
-                    <p class="cart-item__text cart-item__text--right">CLICK TO CONTINUE</p>
+                    <p class="cart-item__text cart-item__text--right" (click)="navigateToPayment()">
+                        CLICK TO CONTINUE
+                    </p>
                 </div>
             </div>
         </div>

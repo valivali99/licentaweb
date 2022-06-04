@@ -1,0 +1,16 @@
+.profile__background-wrapper {
+    background-image: url('../../../../assets/profilebackground.jpg');
+    width: 100%;
+    height: calc(100vh - 55px) !important;
+    display: flex;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.profile__info-wrapper {
+    margin: auto;
+    height: 500px;
+    width: 800px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
