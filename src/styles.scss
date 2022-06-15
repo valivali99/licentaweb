@@ -33,12 +33,17 @@ body::-webkit-scrollbar-thumb {
     margin: auto;
     padding: 10px 30px;
     font-size: 20px;
+    font-family: 'Dancing Script';
+    background-color: white;
+
     cursor: pointer;
 }
 
 .musify-button:hover {
     color: white;
     background-color: black;
+
+    cursor: pointer;
 }
 
 .float-left {

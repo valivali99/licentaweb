@@ -14,6 +14,7 @@ export class NavbarComponent {
     loginRoute = 'login';
     cartRoute = 'cart';
     profileRoute = 'profile';
+    infoRoute = 'info';
 
     constructor(public cartService: CartService, public authenticationService: AuthenticationService, private snackBar: MatSnackBar) { }
 

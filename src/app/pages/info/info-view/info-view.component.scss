@@ -1,0 +1,28 @@
+.info-view__page-container {
+    text-align: center;
+    width: 100%;
+    height: calc(100% - 55px);
+    overflow: hidden;
+    background-image: url('../../../../assets/infowallpaper.jpg');
+}
+
+.my-google-map {
+    width: 500px;
+    margin: auto;
+}
+
+.info-view__info-wrapper {
+    background-color: white;
+    margin: auto;
+    margin-top: 50px;
+    height: 550px;
+    width: 700px;
+
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+}
+
+.info-view__text {
+    font-size: 30px;
+    padding-top: 20px;
+    margin-bottom: 20px;
+}

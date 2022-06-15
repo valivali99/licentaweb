@@ -20,11 +20,11 @@ import { RegisterPageComponent } from './pages/login/register-page/register-page
 import { IsLoggedInGuard } from './shared/guards/is-logged-in.guard';
 import { ItemTypeDescriptionComponent } from './pages/shop/components/item-type-description/item-type-description.component';
 import { CardPaymentComponent } from './pages/cart/card-payment/card-payment.component';
-import { NgPaymentCardModule } from 'ng-payment-card';
 import { ProfileViewComponent } from './pages/profile/profile-view/profile-view.component';
 import { AccountInfoContentComponent } from './pages/profile/account-info-content/account-info-content.component';
 import { InfoViewComponent } from './pages/info/info-view/info-view.component';
 import { GoogleMapsModule } from '@angular/google-maps';
+import { ChangePasswordContentComponent } from './pages/profile/change-password-content/change-password-content.component';
 
 @NgModule({
     declarations: [
@@ -46,8 +46,9 @@ import { GoogleMapsModule } from '@angular/google-maps';
         ProfileViewComponent,
         AccountInfoContentComponent,
         InfoViewComponent,
+        ChangePasswordContentComponent,
     ],
-    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule, NgPaymentCardModule, GoogleMapsModule],
+    imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule, MaterialModule, HttpClientModule, GoogleMapsModule],
     providers: [IsLoggedInGuard],
     bootstrap: [AppComponent]
 })

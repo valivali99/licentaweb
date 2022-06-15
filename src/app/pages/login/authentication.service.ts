@@ -10,6 +10,7 @@ import { RegisterModel } from './models/register-model';
 export class AuthenticationService {
 
   authenticationUrl = `${environment.endpoint}/api/user`;
+  authenticationUrl2 = `${environment.endpoint}/api/password`;
 
   constructor(private http: HttpClient) { }
 
@@ -27,6 +28,15 @@ export class AuthenticationService {
 
   getUserInfo(): any {
     return JSON.parse(localStorage.getItem('user')!);
+  }
+
+  changePassword(): any {
+    let body = {
+      _id: this.getUserInfo()._id,
+      newPassword: "valivali999"
+    }
+
+    return this.http.post<any>(`${this.authenticationUrl2}/password`, body);
   }
 
   logOut(): void {

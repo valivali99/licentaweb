@@ -30,7 +30,6 @@ export class CartPageComponent implements OnInit {
   }
 
   navigateToPayment(): void {
-    console.log(1)
     this.router.navigateByUrl('/payment');
   }
 

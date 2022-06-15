@@ -1,9 +1,9 @@
 <div class="info__wrapper">
     <img class="info__profile-picture" src="../../../../assets/usericon.png" />
 
-    <p class="info__profile-name">{{ authenticationService.getUserInfo().name }}</p>
+    <p class="info__profile-name">Name: {{ authenticationService.getUserInfo().name }}</p>
 
-    <p class="info__profile-name">{{ authenticationService.getUserInfo().email }}</p>
+    <p class="info__profile-name">Email: {{ authenticationService.getUserInfo().email }}</p>
 
-    <p class="info__profile-name">{{ authenticationService.getUserInfo().date | date: 'dd/MM/yyyy' }}</p>
+    <p class="info__profile-name">Created in: {{ authenticationService.getUserInfo().date | date: 'dd/MM/yyyy' }}</p>
 </div>

@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthenticationService } from '../authentication.service';
 import { LoginModel } from '../models/login-model';
@@ -12,9 +12,9 @@ import { MatSnackBar } from '@angular/material/snack-bar';
     styleUrls: ['./login-view.component.scss']
 })
 export class LoginViewComponent {
-    loginForm: UntypedFormGroup = new UntypedFormGroup({
-        email: new UntypedFormControl(null, Validators.required),
-        password: new UntypedFormControl(null, Validators.required)
+    loginForm: FormGroup = new FormGroup({
+        email: new FormControl(null, Validators.required),
+        password: new FormControl(null, Validators.required)
     });
 
     constructor(private authenticationService: AuthenticationService, private router: Router, private snackBar: MatSnackBar) { }
@@ -29,6 +29,7 @@ export class LoginViewComponent {
             localStorage.setItem("user", JSON.stringify(jwt_decode(data)));
 
             this.router.navigate(['shop']);
+
             this.snackBar.open('You have been logged in successfully!', 'X', {
                 duration: 3000
             })
