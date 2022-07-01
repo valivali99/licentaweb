@@ -31,8 +31,8 @@
             </form>
         </div>
 
-        <p class="card__total-price">TOTAL: {{ cartService.getTotalPrice() }} $</p>
+        <p class="card__total-price">TOTAL: {{ cartService.getTotalPrice() }} RON</p>
 
-        <div class="musify-button">SUBMIT PAYMENT</div>
+        <div class="musify-button" (click)="submitPayment()">SUBMIT PAYMENT</div>
     </div>
 </div>

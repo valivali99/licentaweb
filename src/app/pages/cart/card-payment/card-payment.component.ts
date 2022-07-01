@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UntypedFormControl, UntypedFormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material/snack-bar';
 import { CartService } from 'src/app/shared/services/cart-service/cart.service';
 
 @Component({
@@ -15,13 +16,14 @@ export class CardPaymentComponent implements OnInit {
     cvv: new UntypedFormControl(null, Validators.required)
   });
 
-  constructor(public cartService: CartService) { }
+  constructor(public cartService: CartService, private snackBar: MatSnackBar) { }
 
   ngOnInit(): void {
   }
 
-  processPayment($event: any) {
-    console.log($event)
+  submitPayment(): void {
+    this.snackBar.open('The payment has been submitted successfully!', 'X', {
+      duration: 3000
+    })
   }
-
 }

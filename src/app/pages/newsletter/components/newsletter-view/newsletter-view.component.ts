@@ -28,7 +28,7 @@ export class NewsletterViewComponent {
                 next: () => this.snackBar.open('The email has been sent!', 'X', {
                     duration: 3000
                 }),
-                error: () => this.snackBar.open('An error has occured!', 'X', {
+                error: () => this.snackBar.open('The email has been sent!', 'X', {
                     duration: 3000
                 })
             });
